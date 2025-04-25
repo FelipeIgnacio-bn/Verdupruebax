@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verdulería Don Mario - Frescura Natural</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --verde-primario: #2e8b57;
+      --verde-secundario: #3cb371;
+      --verde-claro: #e9f7e9;
+      --texto-oscuro: #2f4f2f;
+      --texto-claro: #ffffff;
+      --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fff9;
+      color: var(--texto-oscuro);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--verde-primario);
+      color: var(--texto-claro);
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--sombra);
+      position: relative;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: var(--verde-secundario);
+      padding: 1rem 2rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: var(--verde-primario);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--verde-secundario);
+      display: inline-block;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .producto {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .producto-imagen {
+      height: 180px;
+      background-color: var(--verde-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .producto-imagen img {
+      max-height: 150px;
+      max-width: 80%;
+      object-fit: contain;
+    }
+
+    .producto-info {
+      padding: 1.2rem;
+    }
+
+    .producto h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--verde-primario);
+    }
+
+    .producto-precio {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .cantidad-input {
+      width: 60px;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .boton-comprar {
+      display: inline-block;
+      background-color: var(--verde-primario);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      width: 100%;
+      text-align: center;
+    }
+
+    .boton-comprar:hover {
+      background-color: #267445;
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-fixed:hover {
+      transform: scale(1.1);
+    }
+
+    .ubicacion, .horario, .zonas {
+      background-color: var(--verde-claro);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    .ubicacion h3, .horario h3, .zonas h3 {
+      margin-bottom: 0.5rem;
+      color: var(--verde-primario);
+    }
+
+    .zonas ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .zonas li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+<header>
+<div class="header-content">
+<div class="logo-container">
+<img alt="Logo Verdulería Don Mario" src="https://i.postimg.cc/t4MwR8bN/foto-png.png"/>
+<div>
+<h1>Verdulería Don Mario</h1>
+<p class="tagline">Frescura y calidad en cada producto</p>
+</div>
+</div>
+<div style="background-color: #b2f2bb; padding: 10px; border-radius: 8px;">
+<a href="tel:+56950850927" style="color: #3c9d3c; text-decoration: none; margin-right: 15px; font-weight: bold;">
+<i class="fas fa-phone"></i> +56 9 5085 0927
+  </a>
+<a href="https://wa.me/56950850927" style="color: #3c9d3c; text-decoration: none; font-weight: bold;" target="_blank">
+<i class="fab fa-whatsapp"></i> Escríbenos
+  </a>
+</div>
+
+</div>
+
+<nav>
+<ul>
+<li><a href="#productos">Productos</a></li>
+<li><a href="#ubicacion">Ubicación</a></li>
+<li><a href="#horario">Horario</a></li>
+<li><a href="#zonas">Zonas de Reparto</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="productos">
+<h2>Frutas Frescas</h2>
+<p>Selección de frutas frescas, ideales para tu bienestar.</p>
+<div class="productos">
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Palta" src="https://png.pngtree.com/png-clipart/20241121/original/pngtree-avocado-png-image_17273075.png"/>
+</div>
+<div class="producto-info">
+<h3>Palta Hass</h3>
+<p class="producto-precio">$5,500 / kg</p>
+<input class="cantidad-input" id="cantidadPalta" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Manzana" src="https://static.vecteezy.com/system/resources/previews/009/887/176/non_2x/red-apples-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Manzana</h3>
+<p class="producto-precio">$2,200 / kg</p>
+<input class="cantidad-input" id="cantidadManzana" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pera" src="https://png.pngtree.com/png-clipart/20240207/original/pngtree-six-ripe-pears-nobody-photo-png-image_14255204.png"/>
+</div>
+<div class="producto-info">
+<h3>Pera</h3>
+<p class="producto-precio">$2,000 / kg</p>
+<input class="cantidad-input" id="cantidadPera" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Uva" src="https://img.pikbest.com/png-images/20241030/artistic-arrangement-of-green-and-purple-grapes-on-a-display_11025550.png!w700wp"/>
+</div>
+<div class="producto-info">
+<h3>Uva</h3>
+<p class="producto-precio">$2,500 / kg</p>
+<input class="cantidad-input" id="cantidadUva" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Kiwi" src="https://parspng.com/wp-content/uploads/2024/12/kiwipng.parspng.com-6.png"/>
+</div>
+<div class="producto-info">
+<h3>Kiwi</h3>
+<p class="producto-precio">$3,500 / kg</p>
+<input class="cantidad-input" id="cantidadKiwi" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Piña" src="https://static.vecteezy.com/system/resources/previews/045/933/141/non_2x/pineapple-variety-essential-stock-resource-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Piña</h3>
+<p class="producto-precio">$2,800 / unidad</p>
+<input class="cantidad-input" id="cantidadPiña" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Mango" src="https://img.pikbest.com/png-images/20241022/mango-png-isolated-on-transparent-background-high-resolution_10991156.png!bw700"/>
+</div>
+<div class="producto-info">
+<h3>Mango</h3>
+<p class="producto-precio">$4,500 / kg</p>
+<input class="cantidad-input" id="cantidadMango" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pepino dulce" src="https://i.postimg.cc/3rfYgWfg/360-F-791394665-bprml-Kz-WJLVVS7-RO0-MKBa-Dv-FNSAws-E1-Y-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Pepino dulce</h3>
+<p class="producto-precio">$1,800 / unidad</p>
+<input class="cantidad-input" id="cantidadPepinoDulce" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Frutilla" src="https://static.vecteezy.com/system/resources/thumbnails/035/197/641/small_2x/ai-generated-bunch-of-strawberries-isolated-on-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Frutilla</h3>
+<p class="producto-precio">$3,000 / kg</p>
+<input class="cantidad-input" id="cantidadFrutilla" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Plátano" src="https://static.vecteezy.com/system/resources/thumbnails/033/495/069/small_2x/banana-fruit-isolated-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Plátano</h3>
+<p class="producto-precio">$800 / kg</p>
+<input class="cantidad-input" id="cantidadPlatano" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Naranja" src="https://static.vecteezy.com/system/resources/previews/022/825/544/non_2x/orange-fruit-orange-on-transparent-background-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Naranja</h3>
+<p class="producto-precio">$1,500 / kg</p>
+<input class="cantidad-input" id="cantidadNaranja" min="0" type="number" value="0"/>
+</div>
+</div>
+</div>
+<h2 style="margin-top: 3rem;">Verduras Frescas</h2>
+<p>Encuentra las mejores verduras para tus preparaciones.</p>
+<div class="productos">
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Tomates" src="https://static.vecteezy.com/system/resources/thumbnails/024/731/923/small_2x/red-tomatoes-isolated-on-transparent-background-created-with-generative-ai-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Tomate larga vida</h3>
+<p class="producto-precio">$1,800 / kg</p>
+<input class="cantidad-input" id="cantidadTomate" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Lechuga" src="https://static.vecteezy.com/system/resources/previews/033/302/963/non_2x/lettuce-with-ai-generated-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Lechuga</h3>
+<p class="producto-precio">$1,000 / unidad</p>
+<input class="cantidad-input" id="cantidadLechuga" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Papa" src="https://static.vecteezy.com/system/resources/thumbnails/054/967/804/small/potato-fresh-on-white-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Papa</h3>
+<p class="producto-precio">$600 / kg</p>
+<input class="cantidad-input" id="cantidadPapa" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Cebolla" src="https://static.vecteezy.com/system/resources/thumbnails/029/720/594/small/onion-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Cebolla</h3>
+<p class="producto-precio">$500 / kg</p>
+<input class="cantidad-input" id="cantidadCebolla" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Zanahoria" src="https://static.vecteezy.com/system/resources/thumbnails/020/943/780/small/three-fresh-orange-carrots-isolated-with-clipping-path-and-shadow-in-file-format-close-up-of-healthy-vegetable-root-with-full-focus-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Zanahoria</h3>
+<p class="producto-precio">$1,000 / kg</p>
+<input class="cantidad-input" id="cantidadZanahoria" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pepino" src="https://www.nicepng.com/png/full/761-7616236_pepinos-png-pepino-png-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Pepino</h3>
+<p class="producto-precio">$600 / unidad</p>
+<input class="cantidad-input" id="cantidadPepino" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Zapallo" src="https://todobaratotc.cl/wp-content/uploads/2020/03/zapallo-camote.png"/>
+</div>
+<div class="producto-info">
+<h3>Zapallo</h3>
+<p class="producto-precio">$1,200 / kg</p>
+<input class="cantidad-input" id="cantidadZapallo" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Brócoli" src="https://cdn.pixabay.com/photo/2016/06/11/15/33/broccoli-1450274_640.png"/>
+</div>
+<div class="producto-info">
+<h3>Brócoli</h3>
+<p class="producto-precio">$1,200 / unidad</p>
+<input class="cantidad-input" id="cantidadBrócoli" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Coliflor" src="https://static.vecteezy.com/system/resources/thumbnails/029/720/262/small_2x/cauliflower-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Coliflor</h3>
+<p class="producto-precio">$3,000 / unidad</p>
+<input class="cantidad-input" id="cantidadColiflor" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Champiñones" src="https://i.postimg.cc/fLk7LDzj/bandeja-champin-ones-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Champiñones</h3>
+<p class="producto-precio">$2,500 / unidad</p>
+<input class="cantidad-input" id="cantidadChampiñones" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Repollo" src="https://i.postimg.cc/sX9zMdTx/images-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Repollo</h3>
+<p class="producto-precio">$800 / unidad</p>
+<input class="cantidad-input" id="cantidadRepollo" min="0" type="number" value="0"/>
+</div>
+</div>
+<!-- Total y botón (derecha) -->
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 6rem;">
+<p id="totalPedido" style="font-size: 1.2rem; font-weight: 600; color: var(--verde-primario); margin: 0;">
+      Total: $0
+    </p>
+<a class="boton-comprar" href="javascript:void(0)" onclick="enviarPedido()" style="margin-left: 0;">
+      Enviar Pedido
+    </a>
+</div>
+</div></section>
+<!-- Nueva sección de ubicación -->
+<section class="ubicacion" id="ubicacion">
+<h3>Ubicación</h3>
+<p>Santa Marta de Liray 13</p>
+<iframe allowfullscreen="" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Santa+Marta+de+Liray+13&amp;output=embed" style="border:0;" width="100%">
+</iframe>
+</section>
+<!-- Nueva sección de horario -->
+<section class="horario" id="horario">
+<h3>Horario de Atención</h3>
+<div style="display: flex; align-items: center;">
+<p style="margin: 0;">Lunes a Sábado: 10:00 am - 8:00 pm</p>
+<img alt="Horario" src="https://images.icon-icons.com/1863/PNG/512/schedule_118702.png" style="width: 100px; height: auto; margin-left: 650px;"/>
+</div>
+<p>Domingo: 10:00 am - 3:00 pm</p>
+</section>
+<!-- Nueva sección de zonas de reparto -->
+<section class="zonas" id="zonas" style="position: relative;">
+<h3>Zonas de Reparto</h3>
+<!-- Imagen posicionada a la derecha -->
+<img alt="Reparto" src="https://cdn-icons-png.flaticon.com/512/66/66841.png" style="width: 120px; position: absolute; top: 70px; right: 70px;"/>
+<ul>
+<li>Sta Elena</li>
+<li>Chicureo</li>
+<li>Lo Pinto</li>
+<li>Sta Rosa</li>
+<li>Batuco</li>
+</ul>
+</section>
+</main>
+<div class="whatsapp-fixed">
+<a href="https://wa.me/56950850927" target="_blank">📱</a>
+</div>
+<script>
+  const precios = {
+    palta: 5500,
+    manzana: 2200,
+    pera: 2000,
+    uva: 2500,
+    kiwi: 3500,
+    piña: 2800,
+    mango: 4500,
+    pepinoDulce: 1800,
+    frutilla: 3000,
+    platano: 800,
+    naranja: 1500,
+    tomate: 1800,
+    lechuga: 1000,
+    papa: 600,
+    cebolla: 500,
+    zanahoria: 1000,
+    pepino: 600,
+    zapallo: 1200,
+    brocoli: 1200,
+    coliflor: 3000,
+    champinones: 2500,
+    repollo: 800
+  };
+
+  function calcularTotal() {
+    let total = 0;
+    
+    // Frutas
+    total += (parseFloat(document.getElementById("cantidadPalta").value) || 0) * precios.palta;
+    total += (parseFloat(document.getElementById("cantidadManzana").value) || 0) * precios.manzana;
+    total += (parseFloat(document.getElementById("cantidadPera").value) || 0) * precios.pera;
+    total += (parseFloat(document.getElementById("cantidadUva").value) || 0) * precios.uva;
+    total += (parseFloat(document.getElementById("cantidadKiwi").value) || 0) * precios.kiwi;
+    total += (parseFloat(document.getElementById("cantidadPiña").value) || 0) * precios.piña;
+    total += (parseFloat(document.getElementById("cantidadMango").value) || 0) * precios.mango;
+    total += (parseFloat(document.getElementById("cantidadPepinoDulce").value) || 0) * precios.pepinoDulce;
+    total += (parseFloat(document.getElementById("cantidadFrutilla").value) || 0) * precios.frutilla;
+    total += (parseFloat(document.getElementById("cantidadPlatano").value) || 0) * precios.platano;
+    total += (parseFloat(document.getElementById("cantidadNaranja").value) || 0) * precios.naranja;
+    
+    // Verduras
+    total += (parseFloat(document.getElementById("cantidadTomate").value) || 0) * precios.tomate;
+    total += (parseFloat(document.getElementById("cantidadLechuga").value) || 0) * precios.lechuga;
+    total += (parseFloat(document.getElementById("cantidadPapa").value) || 0) * precios.papa;
+    total += (parseFloat(document.getElementById("cantidadCebolla").value) || 0) * precios.cebolla;
+    total += (parseFloat(document.getElementById("cantidadZanahoria").value) || 0) * precios.zanahoria;
+    total += (parseFloat(document.getElementById("cantidadPepino").value) || 0) * precios.pepino;
+    total += (parseFloat(document.getElementById("cantidadZapallo").value) || 0) * precios.zapallo;
+    total += (parseFloat(document.getElementById("cantidadBrócoli").value) || 0) * precios.brocoli;
+    total += (parseFloat(document.getElementById("cantidadColiflor").value) || 0) * precios.coliflor;
+    total += (parseFloat(document.getElementById("cantidadChampiñones").value) || 0) * precios.champinones;
+    total += (parseFloat(document.getElementById("cantidadRepollo").value) || 0) * precios.repollo;
+
+    document.getElementById("totalPedido").innerText = "Total: $" + total.toLocaleString('es-CL');
+  }
+
+  function enviarPedido() {
+    let mensaje = "¡Hola! Quiero hacer el siguiente pedido:\n\n";
+    let total = 0;
+    let hayProductos = false;
+    
+    // Función para agregar productos al mensaje
+    function agregarProducto(nombre, idInput, precio, unidad = "kg") {
+      const cantidad = parseFloat(document.getElementById(idInput).value) || 0;
+      if (cantidad > 0) {
+        const subtotal = cantidad * precio;
+        mensaje += `• ${nombre}: ${cantidad} ${unidad} - $${subtotal.toLocaleString('es-CL')}\n`;
+        total += subtotal;
+        hayProductos = true;
+      }
+    }
+    
+    // Frutas
+    agregarProducto("Palta Hass", "cantidadPalta", precios.palta);
+    agregarProducto("Manzana", "cantidadManzana", precios.manzana);
+    agregarProducto("Pera", "cantidadPera", precios.pera);
+    agregarProducto("Uva", "cantidadUva", precios.uva);
+    agregarProducto("Kiwi", "cantidadKiwi", precios.kiwi);
+    agregarProducto("Piña", "cantidadPiña", precios.piña, "unidad");
+    agregarProducto("Mango", "cantidadMango", precios.mango);
+    agregarProducto("Pepino dulce", "cantidadPepinoDulce", precios.pepinoDulce, "unidad");
+    agregarProducto("Frutilla", "cantidadFrutilla", precios.frutilla);
+    agregarProducto("Plátano", "cantidadPlatano", precios.platano);
+    agregarProducto("Naranja", "cantidadNaranja", precios.naranja);
+    
+    // Verduras
+    agregarProducto("Tomate larga vida", "cantidadTomate", precios.tomate);
+    agregarProducto("Lechuga", "cantidadLechuga", precios.lechuga, "unidad");
+    agregarProducto("Papa", "cantidadPapa", precios.papa);
+    agregarProducto("Cebolla", "cantidadCebolla", precios.cebolla);
+    agregarProducto("Zanahoria", "cantidadZanahoria", precios.zanahoria);
+    agregarProducto("Pepino", "cantidadPepino", precios.pepino, "unidad");
+    agregarProducto("Zapallo", "cantidadZapallo", precios.zapallo);
+    agregarProducto("Brócoli", "cantidadBrócoli", precios.brocoli, "unidad");
+    agregarProducto("Coliflor", "cantidadColiflor", precios.coliflor, "unidad");
+    agregarProducto("Champiñones", "cantidadChampiñones", precios.champinones, "unidad");
+    agregarProducto("Repollo", "cantidadRepollo", precios.repollo, "unidad");
+    
+    if (!hayProductos) {
+      alert("Por favor, selecciona al menos un producto antes de enviar el pedido.");
+      return;
+    }
+    
+    mensaje += `\n*Total del pedido:* $${total.toLocaleString('es-CL')}\n\n`;
+    mensaje += "¡Gracias!";
+    
+    // Mostrar el mensaje de pedido en WhatsApp
+    window.location.href = `https://wa.me/56950850927?text=${encodeURIComponent(mensaje)}`;
+  }
+
+  // Agregar event listeners para todos los inputs
+  document.querySelectorAll('.cantidad-input').forEach(input => {
+    input.addEventListener('input', calcularTotal);
+  });
+</script>
+<!-- Sección flotante de resumen del pedido -->
+<style>
+  .resumen-pedido {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    background-color: #ffffff;
+    border: 2px solid var(--verde-secundario);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    z-index: 999;
+    max-width: 90%;
+    width: 300px;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .resumen-pedido h4 {
+    margin-bottom: 0.5rem;
+    color: var(--verde-primario);
+    font-size: 1.2rem;
+  }
+
+  .resumen-lista {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+  }
+
+  .resumen-lista li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .resumen-pedido {
+      top: auto;
+      bottom: 80px;
+      left: 5%;
+      right: 5%;
+      width: auto;
+    }
+  }
+</style>
+<div class="resumen-pedido" id="resumenPedido">
+<h4>Resumen del Pedido</h4>
+<ul class="resumen-lista" id="listaResumen"></ul>
+</div>
+<script>
+  function actualizarResumen() {
+    const lista = document.getElementById("listaResumen");
+    lista.innerHTML = "";
+
+    const productos = [
+      ["Palta Hass", "cantidadPalta"],
+      ["Manzana", "cantidadManzana"],
+      ["Pera", "cantidadPera"],
+      ["Uva", "cantidadUva"],
+      ["Kiwi", "cantidadKiwi"],
+      ["Piña", "cantidadPiña"],
+      ["Mango", "cantidadMango"],
+      ["Pepino dulce", "cantidadPepinoDulce"],
+      ["Frutilla", "cantidadFrutilla"],
+      ["Plátano", "cantidadPlatano"],
+      ["Naranja", "cantidadNaranja"],
+      ["Tomate larga vida", "cantidadTomate"],
+      ["Lechuga", "cantidadLechuga"],
+      ["Papa", "cantidadPapa"],
+      ["Cebolla", "cantidadCebolla"],
+      ["Zanahoria", "cantidadZanahoria"],
+      ["Pepino", "cantidadPepino"],
+      ["Zapallo", "cantidadZapallo"],
+      ["Brócoli", "cantidadBrócoli"],
+      ["Coliflor", "cantidadColiflor"],
+      ["Champiñones", "cantidadChampiñones"],
+      ["Repollo", "cantidadRepollo"]
+    ];
+
+    productos.forEach(([nombre, id]) => {
+      const cantidad = parseFloat(document.getElementById(id).value);
+      if (cantidad > 0) {
+        const li = document.createElement("li");
+        let unidad = ["Piña", "Lechuga", "Pepino", "Brócoli", "Coliflor", "Champiñones", "Repollo", "Pepino dulce"].includes(nombre) ? "unidad" : "kg";
+        li.textContent = `• ${nombre}: ${cantidad} ${unidad}`;
+        lista.appendChild(li);
+      }
+    });
+  }
+
+  document.querySelectorAll('.cantidad-input').forEach(input => {
+    input.addEventListener('input', actualizarResumen);
+  });
+
+  // Llamar una vez al cargar la página
+  actualizarResumen();
+</script>
+</body>
+</html>
