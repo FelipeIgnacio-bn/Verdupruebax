@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verdulería Don Mario - Frescura Natural</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Agregamos más fuentes de Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<style>
+    :root {
+      --verde-primario: #2e8b57;
+      --verde-secundario: #3cb371;
+      --verde-claro: #e9f7e9;
+      --texto-oscuro: #2f4f2f;
+      --texto-claro: #ffffff;
+      --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --textura-fondo: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fff9;
+      color: var(--texto-oscuro);
+      line-height: 1.6;
+      background-image: var(--textura-fondo);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Banner con animación */
+    .banner {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 2rem;
+      animation: slideInDown 0.8s ease-out;
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 5s ease;
+    }
+
+    .banner:hover img {
+      transform: scale(1.05);
+    }
+
+    .banner-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .banner-text h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: white;
+      border: none;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .banner-text p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    header {
+      background-color: var(--verde-primario);
+      color: var(--texto-claro);
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--sombra);
+      position: relative;
+      z-index: 10;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid white;
+      transition: transform 0.3s;
+    }
+
+    header img:hover {
+      transform: rotate(10deg);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: var(--verde-secundario);
+      padding: 1rem 2rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    h2 {
+      color: var(--verde-primario);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--verde-secundario);
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .producto {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: all 0.3s;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .producto-imagen {
+      height: 180px;
+      background-color: var(--verde-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .producto:hover .producto-imagen {
+      background-color: #d4f1d4;
+    }
+
+    .producto-imagen img {
+      max-height: 150px;
+      max-width: 80%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .producto:hover .producto-imagen img {
+      transform: scale(1.05);
+    }
+
+    .producto-info {
+      padding: 1.2rem;
+    }
+
+    .producto h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--verde-primario);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .producto-precio {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 1rem;
+    }
+
+    .cantidad-input {
+      width: 60px;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      transition: border-color 0.3s;
+    }
+
+    .cantidad-input:focus {
+      border-color: var(--verde-primario);
+      outline: none;
+    }
+
+    .boton-comprar {
+      display: inline-block;
+      background-color: var(--verde-primario);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s;
+      width: 100%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .boton-comprar:hover {
+      background-color: #267445;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-fixed:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    .ubicacion, .horario, .zonas {
+      background-color: var(--verde-claro);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      transition: transform 0.3s;
+    }
+
+    .ubicacion:hover, .horario:hover, .zonas:hover {
+      transform: translateY(-3px);
+    }
+
+    .ubicacion h3, .horario h3, .zonas h3 {
+      margin-bottom: 0.5rem;
+      color: var(--verde-primario);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .zonas ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .zonas li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .zonas li:hover {
+      transform: translateX(5px);
+      color: var(--verde-primario);
+    }
+
+    /* Carrito desplegable */
+    .carrito-icono {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--verde-primario);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: var(--sombra);
+      z-index: 1000;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carrito-icono:hover {
+      background-color: #267445;
+      transform: scale(1.1);
+    }
+
+    .carrito-contador {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff4757;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+
+    .carrito-contenido {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--sombra);
+      width: 350px;
+      max-height: 70vh;
+      overflow-y: auto;
+      z-index: 999;
+      padding: 1rem;
+      transform: translateX(120%);
+      transition: transform 0.3s ease-out;
+      border: 1px solid var(--verde-secundario);
+    }
+
+    .carrito-contenido.mostrar {
+      transform: translateX(0);
+    }
+
+    .carrito-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .carrito-header h3 {
+      color: var(--verde-primario);
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .cerrar-carrito {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #777;
+    }
+
+    .carrito-lista {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+
+    .carrito-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .carrito-total {
+      font-weight: bold;
+      text-align: right;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .boton-finalizar {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--verde-primario);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .boton-finalizar:hover {
+      background-color: #267445;
+    }
+
+    /* Carrusel de ofertas */
+    .carrusel-ofertas {
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: var(--sombra);
+    }
+
+    .carrusel-contenedor {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carrusel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carrusel-slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .carrusel-texto {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .carrusel-texto h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .carrusel-texto p {
+      font-size: 1rem;
+    }
+
+    .carrusel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.5);
+      color: var(--verde-primario);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s;
+    }
+
+    .carrusel-control:hover {
+      background-color: rgba(255,255,255,0.8);
+    }
+
+    .carrusel-prev {
+      left: 15px;
+    }
+
+    .carrusel-next {
+      right: 15px;
+    }
+
+    .carrusel-indicadores {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .carrusel-indicador {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carrusel-indicador.activo {
+      background-color: white;
+    }
+
+    /* Buscador */
+    .buscador {
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .buscador input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid var(--verde-secundario);
+      border-radius: 30px;
+      font-size: 1rem;
+      outline: none;
+      box-shadow: var(--sombra);
+      transition: all 0.3s;
+      padding-left: 3rem;
+    }
+
+    .buscador input:focus {
+      border-color: var(--verde-primario);
+      box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+    }
+
+    .buscador i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--verde-primario);
+    }
+
+    @media screen and (max-width: 768px) {
+      .banner {
+        height: 200px;
+      }
+      
+      .banner-text h2 {
+        font-size: 2rem;
+      }
+      
+      .carrito-contenido {
+        top: auto;
+        bottom: 80px;
+        left: 5%;
+        right: 5%;
+        width: auto;
+        max-width: 90%;
+      }
+      
+      .carrusel-texto h3 {
+        font-size: 1.5rem;
+      }
+      
+      .carrusel-slide img {
+        height: 200px;
+      }
+    }
+</style>
+</head>
+<body>
+<header>
+<div class="header-content">
+<div class="logo-container">
+<img alt="Logo Verdulería Don Mario" src="https://i.postimg.cc/t4MwR8bN/foto-png.png"/>
+<div>
+<h1>Verdulería Don Mario</h1>
+<p class="tagline">Frescura y calidad en cada producto</p>
+</div>
+</div>
+<div style="background-color: #b2f2bb; padding: 10px; border-radius: 8px;">
+<a href="tel:+56950850927" style="color: #3c9d3c; text-decoration: none; margin-right: 15px; font-weight: bold;">
+<i class="fas fa-phone"></i> +56 9 5085 0927
+  </a>
+<a href="https://wa.me/56950850927" style="color: #3c9d3c; text-decoration: none; font-weight: bold;" target="_blank">
+<i class="fab fa-whatsapp"></i> Escríbenos
+  </a>
+</div>
+</div>
+
+<nav>
+<ul>
+<li><a href="#productos">Productos</a></li>
+<li><a href="#ubicacion">Ubicación</a></li>
+<li><a href="#horario">Horario</a></li>
+<li><a href="#zonas">Zonas de Reparto</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Banner con foto de verduras llamativa -->
+<div class="banner">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Frutas y verduras frescas"/>
+<div class="banner-text">
+<h2>Frescura Natural</h2>
+<p>Productos seleccionados directamente del campo a tu mesa</p>
+</div>
+</div>
+
+<main>
+<!-- Carrusel de ofertas -->
+<div class="carrusel-ofertas">
+<div class="carrusel-contenedor" id="carrusel">
+<div class="carrusel-slide">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Oferta 1"/>
+<div class="carrusel-texto">
+<h3>Ofertas de la Semana</h3>
+<p>Descuentos especiales en frutas y verduras seleccionadas</p>
+</div>
+</div>
+<div class="carrusel-slide">
+<img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Oferta 2"/>
+<div class="carrusel-texto">
+<h3>Frutas de Temporada</h3>
+<p>Las mejores frutas frescas con descuentos especiales</p>
+</div>
+</div>
+<div class="carrusel-slide">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Oferta 3"/>
+<div class="carrusel-texto">
+<h3>Verduras Frescas</h3>
+<p>Lleva 2 kilos y paga solo 1.5 en productos seleccionados</p>
+</div>
+</div>
+</div>
+<button class="carrusel-control carrusel-prev" onclick="moverCarrusel(-1)">&#10094;</button>
+<button class="carrusel-control carrusel-next" onclick="moverCarrusel(1)">&#10095;</button>
+<div class="carrusel-indicadores" id="indicadores">
+<div class="carrusel-indicador activo" onclick="irASlide(0)"></div>
+<div class="carrusel-indicador" onclick="irASlide(1)"></div>
+<div class="carrusel-indicador" onclick="irASlide(2)"></div>
+</div>
+</div>
+
+<!-- Buscador -->
+<div class="buscador">
+<i class="fas fa-search"></i>
+<input type="text" id="buscadorInput" placeholder="Buscar productos..." onkeyup="filtrarProductos()"/>
+</div>
+
+<section id="productos">
+<h2>Frutas Frescas</h2>
+<p>Selección de frutas frescas, ideales para tu bienestar.</p>
+<div class="productos" id="listaProductos">
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Palta" src="https://png.pngtree.com/png-clipart/20241121/original/pngtree-avocado-png-image_17273075.png"/>
+</div>
+<div class="producto-info">
+<h3>Palta Hass</h3>
+<p class="producto-precio">$5,500 / kg</p>
+<input class="cantidad-input" id="cantidadPalta" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Manzana" src="https://static.vecteezy.com/system/resources/previews/009/887/176/non_2x/red-apples-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Manzana</h3>
+<p class="producto-precio">$2,200 / kg</p>
+<input class="cantidad-input" id="cantidadManzana" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pera" src="https://png.pngtree.com/png-clipart/20240207/original/pngtree-six-ripe-pears-nobody-photo-png-image_14255204.png"/>
+</div>
+<div class="producto-info">
+<h3>Pera</h3>
+<p class="producto-precio">$2,000 / kg</p>
+<input class="cantidad-input" id="cantidadPera" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Uva" src="https://img.pikbest.com/png-images/20241030/artistic-arrangement-of-green-and-purple-grapes-on-a-display_11025550.png!w700wp"/>
+</div>
+<div class="producto-info">
+<h3>Uva</h3>
+<p class="producto-precio">$2,500 / kg</p>
+<input class="cantidad-input" id="cantidadUva" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Kiwi" src="https://parspng.com/wp-content/uploads/2024/12/kiwipng.parspng.com-6.png"/>
+</div>
+<div class="producto-info">
+<h3>Kiwi</h3>
+<p class="producto-precio">$3,500 / kg</p>
+<input class="cantidad-input" id="cantidadKiwi" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Piña" src="https://static.vecteezy.com/system/resources/previews/045/933/141/non_2x/pineapple-variety-essential-stock-resource-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Piña</h3>
+<p class="producto-precio">$2,800 / unidad</p>
+<input class="cantidad-input" id="cantidadPiña" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Mango" src="https://img.pikbest.com/png-images/20241022/mango-png-isolated-on-transparent-background-high-resolution_10991156.png!bw700"/>
+</div>
+<div class="producto-info">
+<h3>Mango</h3>
+<p class="producto-precio">$4,500 / kg</p>
+<input class="cantidad-input" id="cantidadMango" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pepino dulce" src="https://i.postimg.cc/3rfYgWfg/360-F-791394665-bprml-Kz-WJLVVS7-RO0-MKBa-Dv-FNSAws-E1-Y-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Pepino dulce</h3>
+<p class="producto-precio">$1,800 / unidad</p>
+<input class="cantidad-input" id="cantidadPepinoDulce" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Frutilla" src="https://static.vecteezy.com/system/resources/thumbnails/035/197/641/small_2x/ai-generated-bunch-of-strawberries-isolated-on-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Frutilla</h3>
+<p class="producto-precio">$3,000 / kg</p>
+<input class="cantidad-input" id="cantidadFrutilla" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Plátano" src="https://static.vecteezy.com/system/resources/thumbnails/033/495/069/small_2x/banana-fruit-isolated-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Plátano</h3>
+<p class="producto-precio">$800 / kg</p>
+<input class="cantidad-input" id="cantidadPlatano" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Naranja" src="https://static.vecteezy.com/system/resources/previews/022/825/544/non_2x/orange-fruit-orange-on-transparent-background-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Naranja</h3>
+<p class="producto-precio">$1,500 / kg</p>
+<input class="cantidad-input" id="cantidadNaranja" min="0" type="number" value="0"/>
+</div>
+</div>
+</div>
+<h2 style="margin-top: 3rem;">Verduras Frescas</h2>
+<p>Encuentra las mejores verduras para tus preparaciones.</p>
+<div class="productos">
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Tomates" src="https://static.vecteezy.com/system/resources/thumbnails/024/731/923/small_2x/red-tomatoes-isolated-on-transparent-background-created-with-generative-ai-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Tomate larga vida</h3>
+<p class="producto-precio">$1,800 / kg</p>
+<input class="cantidad-input" id="cantidadTomate" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Lechuga" src="https://static.vecteezy.com/system/resources/previews/033/302/963/non_2x/lettuce-with-ai-generated-free-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Lechuga</h3>
+<p class="producto-precio">$1,000 / unidad</p>
+<input class="cantidad-input" id="cantidadLechuga" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Papa" src="https://static.vecteezy.com/system/resources/thumbnails/054/967/804/small/potato-fresh-on-white-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Papa</h3>
+<p class="producto-precio">$600 / kg</p>
+<input class="cantidad-input" id="cantidadPapa" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Cebolla" src="https://static.vecteezy.com/system/resources/thumbnails/029/720/594/small/onion-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Cebolla</h3>
+<p class="producto-precio">$500 / kg</p>
+<input class="cantidad-input" id="cantidadCebolla" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Zanahoria" src="https://static.vecteezy.com/system/resources/thumbnails/020/943/780/small/three-fresh-orange-carrots-isolated-with-clipping-path-and-shadow-in-file-format-close-up-of-healthy-vegetable-root-with-full-focus-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Zanahoria</h3>
+<p class="producto-precio">$1,000 / kg</p>
+<input class="cantidad-input" id="cantidadZanahoria" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Pepino" src="https://www.nicepng.com/png/full/761-7616236_pepinos-png-pepino-png-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Pepino</h3>
+<p class="producto-precio">$600 / unidad</p>
+<input class="cantidad-input" id="cantidadPepino" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Zapallo" src="https://todobaratotc.cl/wp-content/uploads/2020/03/zapallo-camote.png"/>
+</div>
+<div class="producto-info">
+<h3>Zapallo</h3>
+<p class="producto-precio">$1,200 / kg</p>
+<input class="cantidad-input" id="cantidadZapallo" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Brócoli" src="https://cdn.pixabay.com/photo/2016/06/11/15/33/broccoli-1450274_640.png"/>
+</div>
+<div class="producto-info">
+<h3>Brócoli</h3>
+<p class="producto-precio">$1,200 / unidad</p>
+<input class="cantidad-input" id="cantidadBrócoli" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Coliflor" src="https://static.vecteezy.com/system/resources/thumbnails/029/720/262/small_2x/cauliflower-transparent-background-png.png"/>
+</div>
+<div class="producto-info">
+<h3>Coliflor</h3>
+<p class="producto-precio">$3,000 / unidad</p>
+<input class="cantidad-input" id="cantidadColiflor" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Champiñones" src="https://i.postimg.cc/fLk7LDzj/bandeja-champin-ones-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Champiñones</h3>
+<p class="producto-precio">$2,500 / unidad</p>
+<input class="cantidad-input" id="cantidadChampiñones" min="0" type="number" value="0"/>
+</div>
+</div>
+<div class="producto">
+<div class="producto-imagen">
+<img alt="Repollo" src="https://i.postimg.cc/sX9zMdTx/images-Photoroom.png"/>
+</div>
+<div class="producto-info">
+<h3>Repollo</h3>
+<p class="producto-precio">$800 / unidad</p>
+<input class="cantidad-input" id="cantidadRepollo" min="0" type="number" value="0"/>
+</div>
+</div>
+<!-- Total y botón (derecha) -->
+</section>
+<!-- Nueva sección de ubicación -->
+
+<section class="ubicacion" id="ubicacion" style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 2rem; border-radius: 15px; margin-top: 4rem;">
+  <h3 style="font-size: 1.8rem; color: var(--verde-primario); margin-bottom: 1rem;">📍 Nuestra Ubicación</h3>
+  <p style="font-size: 1.1rem;">Santa Marta de Liray 13</p>
+  <iframe allowfullscreen="" height="300" loading="lazy" style="border:0; width: 100%; border-radius: 10px; margin-top: 1rem;" 
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248.02489639725434!2d-70.73765514042516!3d-33.23999059456002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1745607152330!5m2!1ses-419!2scl">
+  </iframe>
+</section>
+
+<!-- Nueva sección de horario -->
+
+<section class="horario" id="horario" style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+  <h3 style="font-size: 1.8rem; color: var(--verde-primario); margin-bottom: 1rem;">🕒 Horario de Atención</h3>
+  <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 1.6;">
+    <li><strong>Lunes a Sábado:</strong> 10:00 am - 8:00 pm</li>
+    <li><strong>Domingo:</strong> 10:00 am - 3:00 pm</li>
+  </ul>
+</section>
+
+<!-- Nueva sección de zonas de reparto -->
+
+<section class="zonas" id="zonas" style="background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+  <h3 style="font-size: 1.8rem; color: var(--verde-primario); margin-bottom: 1rem;">🚚 Zonas de Reparto</h3>
+  <p style="font-size: 1.1rem;">Realizamos entregas en las siguientes zonas:</p>
+  <ul style="columns: 2; list-style-type: '🍃 '; font-size: 1rem; margin-top: 1rem;">
+    <li>Sta Elena</li>
+    <li>Chicureo</li>
+    <li>Lo Pinto</li>
+    <li>Sta Rosa</li>
+    <li>Batuco</li>
+  </ul>
+</section>
+
+</main>
+<div class="whatsapp-fixed">
+<a href="https://wa.me/56950850927" target="_blank">📱</a>
+</div>
+
+<!-- Carrito desplegable -->
+<div class="carrito-icono" onclick="toggleCarrito()">
+<i class="fas fa-shopping-cart"></i>
+<div class="carrito-contador" id="carritoContador">0</div>
+</div>
+
+<div class="carrito-contenido" id="carritoContenido">
+<div class="carrito-header">
+<h3>Tu Pedido</h3>
+<button class="cerrar-carrito" onclick="toggleCarrito()">&times;</button>
+</div>
+<ul class="carrito-lista" id="carritoLista">
+<!-- Los productos se agregarán aquí dinámicamente -->
+</ul>
+<div class="carrito-total" id="carritoTotal">Total: $0</div>
+<button class="boton-finalizar" onclick="enviarPedido()">Finalizar Pedido</button>
+</div>
+
+<!-- Panel de Administración Mejorado -->
+<style>
+  /* Estilos para el panel de administración mejorado */
+  #adminPanel {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid var(--verde-secundario);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  #adminPanel h3 {
+    margin-top: 0;
+    color: var(--verde-primario);
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--verde-secundario);
+    padding-bottom: 0.5rem;
+  }
+  
+  .admin-tabs {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-tab {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 0.5rem;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .admin-tab.active {
+    background: var(--verde-claro);
+    color: var(--verde-primario);
+    font-weight: bold;
+  }
+  
+  .admin-tab-content {
+    display: none;
+  }
+  
+  .admin-tab-content.active {
+    display: block;
+  }
+  
+  .admin-form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .admin-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--texto-oscuro);
+  }
+  
+  .admin-form-group input,
+  .admin-form-group select,
+  .admin-form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .admin-form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .admin-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .admin-button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .admin-button.primary {
+    background-color: var(--verde-primario);
+    color: white;
+  }
+  
+  .admin-button.secondary {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .admin-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  .productos-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  
+  .producto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .producto-item:last-child {
+    border-bottom: none;
+  }
+  
+  .producto-info {
+    flex: 1;
+  }
+  
+  .producto-nombre {
+    font-weight: 500;
+    color: var(--verde-primario);
+  }
+  
+  .producto-precio {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .producto-acciones {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .producto-acciones button {
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .producto-acciones .editar {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .producto-acciones .eliminar {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .admin-login {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .admin-login input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .admin-login button {
+    padding: 0.5rem 1rem;
+    background-color: var(--verde-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .admin-login button:hover {
+    background-color: #267445;
+  }
+  
+  .categoria-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .categoria-option {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .categoria-option.selected {
+    border-color: var(--verde-primario);
+    background-color: var(--verde-claro);
+    color: var(--verde-primario);
+    font-weight: bold;
+  }
+  
+  .carrusel-editor {
+    margin-bottom: 1.5rem;
+  }
+  
+  .carrusel-slide-editor {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+  }
+  
+  .carrusel-slide-editor h4 {
+    margin-top: 0;
+    color: var(--verde-primario);
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    display: block;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+  }
+  
+  .titulo-editor {
+    margin-bottom: 1.5rem;
+  }
+  
+  .titulo-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    #adminPanel {
+      width: 95%;
+      padding: 1rem;
+    }
+    
+    .admin-login {
+      flex-direction: column;
+      width: 90%;
+      left: 5%;
+      bottom: 5px;
+    }
+    
+    .admin-login input {
+      width: 100%;
+    }
+    
+    .admin-login button {
+      width: 100%;
+    }
+    
+    .admin-tabs {
+      flex-wrap: wrap;
+    }
+    
+    .admin-tab {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
+
+<!-- Panel de login -->
+<div class="admin-login">
+  <input type="text" id="adminUser" placeholder="Usuario" />
+  <input type="password" id="adminPass" placeholder="Contraseña" />
+  <button onclick="loginAdmin()">Entrar</button>
+</div>
+
+<!-- Panel de administración mejorado -->
+<div id="adminPanel">
+  <h3>Panel de Administración - Verdulería Don Mario</h3>
+  
+  <div class="admin-tabs">
+    <div class="admin-tab active" onclick="cambiarTab('agregar')">Agregar Producto</div>
+    <div class="admin-tab" onclick="cambiarTab('editar')">Editar Productos</div>
+    <div class="admin-tab" onclick="cambiarTab('carrusel')">Carrusel de Ofertas</div>
+    <div class="admin-tab" onclick="cambiarTab('titulos')">Títulos y Textos</div>
+    <div class="admin-tab" onclick="cambiarTab('diseno')">Diseño</div>
+  </div>
+  
+  <!-- Pestaña para agregar productos -->
+  <div id="agregarTab" class="admin-tab-content active">
+    <div class="categoria-selector">
+      <div class="categoria-option selected" onclick="seleccionarCategoria('frutas')">
+        Frutas
+      </div>
+      <div class="categoria-option" onclick="seleccionarCategoria('verduras')">
+        Verduras
+      </div>
+    </div>
+    
+    <div class="admin-form-group">
+      <label for="productoNombre">Nombre del Producto:</label>
+      <input type="text" id="productoNombre" placeholder="Ej: Manzana Roja">
+    </div>
+    
+    <div class="admin-form-group">
+      <label for="productoPrecio">Precio (CLP):</label>
+      <input type="number" id="productoPrecio" placeholder="Ej: 2500">
+    </div>
+    
+    <div class="admin-form-group">
+      <label for="productoUnidad">Unidad de venta:</label>
+      <select id="productoUnidad">
+        <option value="kg">Por Kilo (kg)</option>
+        <option value="unidad">Por Unidad</option>
+      </select>
+    </div>
+    
+    <div class="admin-form-group">
+      <label for="productoImagen">URL de la imagen:</label>
+      <input type="text" id="productoImagen" placeholder="Pega aquí la URL de la imagen">
+      <small>Puedes subir la imagen a <a href="https://postimages.org/" target="_blank">postimages.org</a> y pegar el enlace aquí</small>
+    </div>
+    
+    <div class="admin-buttons">
+      <button class="admin-button primary" onclick="agregarProducto()">Agregar Producto</button>
+      <button class="admin-button secondary" onclick="document.getElementById('adminPanel').style.display='none'">Cerrar Panel</button>
+    </div>
+  </div>
+  
+  <!-- Pestaña para editar productos -->
+  <div id="editarTab" class="admin-tab-content">
+    <h4>Productos Existentes</h4>
+    <p>Haz clic en un producto para editarlo o eliminarlo</p>
+    
+    <div class="productos-list" id="listaProductosAdmin">
+      <!-- Los productos se cargarán aquí dinámicamente -->
+    </div>
+    
+    <div class="admin-buttons">
+      <button class="admin-button secondary" onclick="document.getElementById('adminPanel').style.display='none'">Cerrar Panel</button>
+    </div>
+  </div>
+  
+  <!-- Pestaña para editar carrusel de ofertas -->
+  <div id="carruselTab" class="admin-tab-content">
+    <div class="carrusel-editor">
+      <h4>Editar Carrusel de Ofertas</h4>
+      <p>Modifica las imágenes y textos de las diapositivas del carrusel.</p>
+      
+      <div class="carrusel-slide-editor">
+        <h4>Diapositiva 1</h4>
+        <div class="admin-form-group">
+          <label for="carruselImagen1">URL de la imagen:</label>
+          <input type="text" id="carruselImagen1" placeholder="Pega aquí la URL de la imagen">
+          <img id="previewImagen1" class="preview-image" src="" alt="Vista previa">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTitulo1">Título:</label>
+          <input type="text" id="carruselTitulo1" placeholder="Título de la diapositiva">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTexto1">Texto descriptivo:</label>
+          <input type="text" id="carruselTexto1" placeholder="Texto descriptivo">
+        </div>
+      </div>
+      
+      <div class="carrusel-slide-editor">
+        <h4>Diapositiva 2</h4>
+        <div class="admin-form-group">
+          <label for="carruselImagen2">URL de la imagen:</label>
+          <input type="text" id="carruselImagen2" placeholder="Pega aquí la URL de la imagen">
+          <img id="previewImagen2" class="preview-image" src="" alt="Vista previa">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTitulo2">Título:</label>
+          <input type="text" id="carruselTitulo2" placeholder="Título de la diapositiva">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTexto2">Texto descriptivo:</label>
+          <input type="text" id="carruselTexto2" placeholder="Texto descriptivo">
+        </div>
+      </div>
+      
+      <div class="carrusel-slide-editor">
+        <h4>Diapositiva 3</h4>
+        <div class="admin-form-group">
+          <label for="carruselImagen3">URL de la imagen:</label>
+          <input type="text" id="carruselImagen3" placeholder="Pega aquí la URL de la imagen">
+          <img id="previewImagen3" class="preview-image" src="" alt="Vista previa">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTitulo3">Título:</label>
+          <input type="text" id="carruselTitulo3" placeholder="Título de la diapositiva">
+        </div>
+        <div class="admin-form-group">
+          <label for="carruselTexto3">Texto descriptivo:</label>
+          <input type="text" id="carruselTexto3" placeholder="Texto descriptivo">
+        </div>
+      </div>
+      
+      <div class="admin-buttons">
+        <button class="admin-button primary" onclick="guardarCambiosCarrusel()">Guardar Cambios</button>
+        <button class="admin-button secondary" onclick="cargarCarruselActual()">Restaurar Original</button>
+        <button class="admin-button secondary" onclick="document.getElementById('adminPanel').style.display='none'">Cerrar Panel</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pestaña para editar títulos y textos -->
+  <div id="titulosTab" class="admin-tab-content">
+    <div class="titulo-editor">
+      <h4>Editar Títulos y Textos Principales</h4>
+      <p>Modifica los textos más importantes de tu página.</p>
+      
+      <div class="titulo-item">
+        <div class="admin-form-group">
+          <label for="tituloPrincipal">Título Principal (Banner):</label>
+          <input type="text" id="tituloPrincipal" placeholder="Título principal del banner">
+        </div>
+        <div class="admin-form-group">
+          <label for="subtituloBanner">Subtítulo del Banner:</label>
+          <input type="text" id="subtituloBanner" placeholder="Subtítulo del banner">
+        </div>
+      </div>
+      
+      <div class="titulo-item">
+        <div class="admin-form-group">
+          <label for="tituloFrutas">Título Sección Frutas:</label>
+          <input type="text" id="tituloFrutas" placeholder="Título de la sección de frutas">
+        </div>
+        <div class="admin-form-group">
+          <label for="descripcionFrutas">Descripción Frutas:</label>
+          <textarea id="descripcionFrutas" placeholder="Descripción de la sección de frutas"></textarea>
+        </div>
+      </div>
+      
+      <div class="titulo-item">
+        <div class="admin-form-group">
+          <label for="tituloVerduras">Título Sección Verduras:</label>
+          <input type="text" id="tituloVerduras" placeholder="Título de la sección de verduras">
+        </div>
+        <div class="admin-form-group">
+          <label for="descripcionVerduras">Descripción Verduras:</label>
+          <textarea id="descripcionVerduras" placeholder="Descripción de la sección de verduras"></textarea>
+        </div>
+      </div>
+      
+      <div class="admin-buttons">
+        <button class="admin-button primary" onclick="guardarCambiosTitulos()">Guardar Cambios</button>
+        <button class="admin-button secondary" onclick="cargarTitulosActuales()">Restaurar Original</button>
+        <button class="admin-button secondary" onclick="document.getElementById('adminPanel').style.display='none'">Cerrar Panel</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pestaña de diseño -->
+  <div id="disenoTab" class="admin-tab-content">
+    <h4>Personalizar Diseño</h4>
+    <p>Ajusta los colores y fuentes de tu página.</p>
+    
+    <div class="admin-form-group">
+      <label for="fuenteSitio">Fuente del sitio:</label>
+      <select id="fuenteSitio">
+        <option value="'Poppins', sans-serif">Poppins</option>
+        <option value="'Playfair Display', serif">Playfair Display</option>
+        <option value="'Dancing Script', cursive">Dancing Script</option>
+        <option value="'Arial', sans-serif">Arial</option>
+        <option value="'Georgia', serif">Georgia</option>
+      </select>
+    </div>
+
+    <div class="admin-form-group">
+      <label for="colorPrimario">Color primario:</label>
+      <input type="color" id="colorPrimario" value="#2e8b57">
+    </div>
+
+    <div class="admin-form-group">
+      <label for="colorSecundario">Color secundario:</label>
+      <input type="color" id="colorSecundario" value="#3cb371">
+    </div>
+    
+    <div class="admin-form-group">
+      <label for="imagenBanner">URL de imagen del banner:</label>
+      <input type="text" id="imagenBanner" placeholder="Pega una URL de imagen">
+      <img id="previewBanner" class="preview-image" src="" alt="Vista previa del banner">
+    </div>
+    
+    <div class="admin-buttons">
+      <button class="admin-button primary" onclick="aplicarCambiosDiseno()">Aplicar Cambios</button>
+      <button class="admin-button secondary" onclick="restaurarDisenoOriginal()">Restaurar Original</button>
+      <button class="admin-button secondary" onclick="document.getElementById('adminPanel').style.display='none'">Cerrar Panel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Variables globales
+  let categoriaActual = 'frutas';
+  let productoEditando = null;
+  
+  // Función para cambiar entre pestañas
+  function cambiarTab(tabId) {
+    document.querySelectorAll('.admin-tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+
+    document.querySelectorAll('.admin-tab-content').forEach(content => {
+      content.classList.remove('active');
+    });
+
+    if (tabId === 'agregar') {
+      document.querySelector('.admin-tab:nth-child(1)').classList.add('active');
+      document.getElementById('agregarTab').classList.add('active');
+      productoEditando = null;
+      resetFormulario();
+    } else if (tabId === 'editar') {
+      document.querySelector('.admin-tab:nth-child(2)').classList.add('active');
+      document.getElementById('editarTab').classList.add('active');
+      cargarProductosParaEdicion();
+    } else if (tabId === 'carrusel') {
+      document.querySelector('.admin-tab:nth-child(3)').classList.add('active');
+      document.getElementById('carruselTab').classList.add('active');
+      cargarCarruselActual();
+    } else if (tabId === 'titulos') {
+      document.querySelector('.admin-tab:nth-child(4)').classList.add('active');
+      document.getElementById('titulosTab').classList.add('active');
+      cargarTitulosActuales();
+    } else if (tabId === 'diseno') {
+      document.querySelector('.admin-tab:nth-child(5)').classList.add('active');
+      document.getElementById('disenoTab').classList.add('active');
+      cargarConfiguracionDiseno();
+    }
+  }
+  
+  // Función para seleccionar categoría
+  function seleccionarCategoria(categoria) {
+    categoriaActual = categoria;
+    document.querySelectorAll('.categoria-option').forEach(opt => {
+      opt.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
+  }
+  
+  // Función para resetear el formulario
+  function resetFormulario() {
+    document.getElementById('productoNombre').value = '';
+    document.getElementById('productoPrecio').value = '';
+    document.getElementById('productoImagen').value = '';
+    document.getElementById('productoUnidad').value = 'kg';
+    document.querySelector('.admin-button.primary').textContent = 'Agregar Producto';
+  }
+  
+  // Función para agregar o actualizar producto
+  function agregarProducto() {
+    const nombre = document.getElementById('productoNombre').value.trim();
+    const precio = document.getElementById('productoPrecio').value.trim();
+    const imagen = document.getElementById('productoImagen').value.trim();
+    const unidad = document.getElementById('productoUnidad').value;
+    
+    if (!nombre || !precio) {
+      alert('Por favor completa al menos el nombre y precio del producto');
+      return;
+    }
+    
+    // Crear el ID único para el producto (eliminamos espacios y acentos)
+    const id = 'cantidad' + nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '');
+    
+    // Crear el HTML del producto
+    let htmlProducto = `
+      <div class="producto">
+        <div class="producto-imagen">
+          <img alt="${nombre}" src="${imagen || 'https://via.placeholder.com/150?text=Sin+imagen'}"/>
+        </div>
+        <div class="producto-info">
+          <h3>${nombre}</h3>
+          <p class="producto-precio">$${parseInt(precio).toLocaleString('es-CL')} ${unidad === 'kg' ? '/ kg' : '/ unidad'}</p>
+          <input class="cantidad-input" id="${id}" min="0" type="number" value="0"/>
+        </div>
+      </div>
+    `;
+    
+    // Determinar dónde insertar el producto
+    let contenedor;
+    if (categoriaActual === 'frutas') {
+      contenedor = document.querySelector('#listaProductos');
+    } else {
+      // Buscamos el contenedor de verduras (el segundo .productos después de "Verduras Frescas")
+      const secciones = document.querySelectorAll('section');
+      let seccionVerduras;
+      
+      for (let seccion of secciones) {
+        if (seccion.querySelector('h2') && seccion.querySelector('h2').textContent.includes('Verduras')) {
+          seccionVerduras = seccion;
+          break;
+        }
+      }
+      
+      if (seccionVerduras) {
+        contenedor = seccionVerduras.querySelector('.productos');
+      } else {
+        contenedor = document.querySelector('.productos:last-child');
+      }
+    }
+    
+    if (productoEditando) {
+      // Reemplazar el producto existente
+      productoEditando.outerHTML = htmlProducto;
+      alert('Producto actualizado correctamente');
+    } else {
+      // Agregar nuevo producto
+      contenedor.insertAdjacentHTML('beforeend', htmlProducto);
+      alert('Producto agregado correctamente');
+    }
+    
+    // Actualizar el carrito y resetear el formulario
+    contarProductosDistintos();
+    resetFormulario();
+    cargarProductosParaEdicion();
+  }
+  
+  // Función para cargar productos en la pestaña de edición
+  function cargarProductosParaEdicion() {
+    const lista = document.getElementById('listaProductosAdmin');
+    lista.innerHTML = '';
+    
+    // Obtener todos los productos de frutas y verduras
+    const productosFrutas = document.querySelectorAll('#listaProductos .producto');
+    const productosVerduras = document.querySelectorAll('section h2 + .productos .producto');
+    
+    // Agregar encabezado de frutas si hay productos
+    if (productosFrutas.length > 0) {
+      const encabezado = document.createElement('div');
+      encabezado.style.padding = '0.5rem';
+      encabezado.style.backgroundColor = '#f5f5f5';
+      encabezado.style.fontWeight = 'bold';
+      encabezado.style.marginTop = '1rem';
+      encabezado.textContent = 'Frutas';
+      lista.appendChild(encabezado);
+      
+      productosFrutas.forEach(producto => {
+        agregarProductoAListaEdicion(producto, lista);
+      });
+    }
+    
+    // Agregar encabezado de verduras si hay productos
+    if (productosVerduras.length > 0) {
+      const encabezado = document.createElement('div');
+      encabezado.style.padding = '0.5rem';
+      encabezado.style.backgroundColor = '#f5f5f5';
+      encabezado.style.fontWeight = 'bold';
+      encabezado.style.marginTop = '1rem';
+      encabezado.textContent = 'Verduras';
+      lista.appendChild(encabezado);
+      
+      productosVerduras.forEach(producto => {
+        agregarProductoAListaEdicion(producto, lista);
+      });
+    }
+    
+    if (productosFrutas.length === 0 && productosVerduras.length === 0) {
+      lista.innerHTML = '<p>No hay productos registrados aún.</p>';
+    }
+  }
+  
+  // Función auxiliar para agregar un producto a la lista de edición
+  function agregarProductoAListaEdicion(producto, lista) {
+    const nombre = producto.querySelector('h3').textContent;
+    const precioTexto = producto.querySelector('.producto-precio').textContent;
+    const precio = precioTexto.replace(/[^0-9]/g, '');
+    const unidad = precioTexto.includes('/ unidad') ? 'unidad' : 'kg';
+    const imagen = producto.querySelector('img') ? producto.querySelector('img').src : '';
+    const idInput = producto.querySelector('.cantidad-input').id;
+    
+    const item = document.createElement('div');
+    item.className = 'producto-item';
+    item.innerHTML = `
+      <div class="producto-info">
+        <div class="producto-nombre">${nombre}</div>
+        <div class="producto-precio">$${parseInt(precio).toLocaleString('es-CL')} / ${unidad}</div>
+      </div>
+      <div class="producto-acciones">
+        <button class="editar" onclick="editarProductoExistente('${idInput}')">Editar</button>
+        <button class="eliminar" onclick="eliminarProductoExistente('${idInput}')">Eliminar</button>
+      </div>
+    `;
+    
+    lista.appendChild(item);
+  }
+  
+  // Función para editar un producto existente
+  function editarProductoExistente(idInput) {
+    const producto = document.getElementById(idInput).closest('.producto');
+    const nombre = producto.querySelector('h3').textContent;
+    const precioTexto = producto.querySelector('.producto-precio').textContent;
+    const precio = precioTexto.replace(/[^0-9]/g, '');
+    const unidad = precioTexto.includes('/ unidad') ? 'unidad' : 'kg';
+    const imagen = producto.querySelector('img') ? producto.querySelector('img').src : '';
+    
+    // Llenar el formulario con los datos del producto
+    document.getElementById('productoNombre').value = nombre;
+    document.getElementById('productoPrecio').value = precio;
+    document.getElementById('productoImagen').value = imagen;
+    document.getElementById('productoUnidad').value = unidad;
+    
+    // Determinar la categoría (frutas o verduras)
+    const seccion = producto.closest('section');
+    if (seccion && seccion.querySelector('h2').textContent.includes('Verduras')) {
+      seleccionarCategoria('verduras');
+    } else {
+      seleccionarCategoria('frutas');
+    }
+    
+    // Cambiar a la pestaña de agregar/editar
+    cambiarTab('agregar');
+    document.querySelector('.admin-button.primary').textContent = 'Actualizar Producto';
+    
+    // Guardar referencia al producto que estamos editando
+    productoEditando = producto;
+  }
+  
+  // Función para eliminar un producto existente
+  function eliminarProductoExistente(idInput) {
+    if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+      const producto = document.getElementById(idInput).closest('.producto');
+      producto.remove();
+      cargarProductosParaEdicion();
+      contarProductosDistintos();
+      alert('Producto eliminado correctamente');
+    }
+  }
+  
+  // Función para cargar la configuración actual del carrusel
+  function cargarCarruselActual() {
+    const slides = document.querySelectorAll('.carrusel-slide');
+    
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector('img');
+      const titulo = slide.querySelector('.carrusel-texto h3');
+      const texto = slide.querySelector('.carrusel-texto p');
+      
+      document.getElementById(`carruselImagen${index+1}`).value = img.src;
+      document.getElementById(`carruselTitulo${index+1}`).value = titulo.textContent;
+      document.getElementById(`carruselTexto${index+1}`).value = texto.textContent;
+      
+      // Mostrar vista previa de la imagen
+      document.getElementById(`previewImagen${index+1}`).src = img.src;
+    });
+    
+    // Configurar eventos para mostrar vista previa al cambiar imágenes
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById(`carruselImagen${i}`).addEventListener('input', function() {
+        document.getElementById(`previewImagen${i}`).src = this.value;
+      });
+    }
+  }
+  
+  // Función para guardar cambios en el carrusel
+  function guardarCambiosCarrusel() {
+    const slides = document.querySelectorAll('.carrusel-slide');
+    
+    slides.forEach((slide, index) => {
+      const img = slide.querySelector('img');
+      const titulo = slide.querySelector('.carrusel-texto h3');
+      const texto = slide.querySelector('.carrusel-texto p');
+      
+      img.src = document.getElementById(`carruselImagen${index+1}`).value;
+      titulo.textContent = document.getElementById(`carruselTitulo${index+1}`).value;
+      texto.textContent = document.getElementById(`carruselTexto${index+1}`).value;
+    });
+    
+    alert('Cambios en el carrusel guardados correctamente');
+  }
+  
+  // Función para cargar los títulos actuales de la página
+  function cargarTitulosActuales() {
+    // Banner
+    const bannerTitulo = document.querySelector('.banner-text h2');
+    const bannerSubtitulo = document.querySelector('.banner-text p');
+    
+    document.getElementById('tituloPrincipal').value = bannerTitulo.textContent;
+    document.getElementById('subtituloBanner').value = bannerSubtitulo.textContent;
+    
+    // Sección Frutas
+    const secciones = document.querySelectorAll('section');
+    for (let seccion of secciones) {
+      const h2 = seccion.querySelector('h2');
+      if (h2 && h2.textContent.includes('Frutas')) {
+        document.getElementById('tituloFrutas').value = h2.textContent;
+        const descripcion = h2.nextElementSibling;
+        if (descripcion && descripcion.tagName === 'P') {
+          document.getElementById('descripcionFrutas').value = descripcion.textContent;
+        }
+      } else if (h2 && h2.textContent.includes('Verduras')) {
+        document.getElementById('tituloVerduras').value = h2.textContent;
+        const descripcion = h2.nextElementSibling;
+        if (descripcion && descripcion.tagName === 'P') {
+          document.getElementById('descripcionVerduras').value = descripcion.textContent;
+        }
+      }
+    }
+  }
+  
+  // Función para guardar cambios en los títulos
+  function guardarCambiosTitulos() {
+    // Banner
+    const bannerTitulo = document.querySelector('.banner-text h2');
+    const bannerSubtitulo = document.querySelector('.banner-text p');
+    
+    bannerTitulo.textContent = document.getElementById('tituloPrincipal').value;
+    bannerSubtitulo.textContent = document.getElementById('subtituloBanner').value;
+    
+    // Sección Frutas
+    const secciones = document.querySelectorAll('section');
+    for (let seccion of secciones) {
+      const h2 = seccion.querySelector('h2');
+      if (h2 && h2.textContent.includes('Frutas')) {
+        h2.textContent = document.getElementById('tituloFrutas').value;
+        const descripcion = h2.nextElementSibling;
+        if (descripcion && descripcion.tagName === 'P') {
+          descripcion.textContent = document.getElementById('descripcionFrutas').value;
+        }
+      } else if (h2 && h2.textContent.includes('Verduras')) {
+        h2.textContent = document.getElementById('tituloVerduras').value;
+        const descripcion = h2.nextElementSibling;
+        if (descripcion && descripcion.tagName === 'P') {
+          descripcion.textContent = document.getElementById('descripcionVerduras').value;
+        }
+      }
+    }
+    
+    alert('Cambios en los títulos guardados correctamente');
+  }
+  
+  // Función para cargar la configuración actual del diseño
+  function cargarConfiguracionDiseno() {
+    // Fuente
+    const bodyFont = window.getComputedStyle(document.body).fontFamily;
+    document.getElementById('fuenteSitio').value = bodyFont;
+    
+    // Colores
+    const rootStyles = getComputedStyle(document.documentElement);
+    document.getElementById('colorPrimario').value = rootStyles.getPropertyValue('--verde-primario').trim();
+    document.getElementById('colorSecundario').value = rootStyles.getPropertyValue('--verde-secundario').trim();
+    
+    // Banner
+    const bannerImg = document.querySelector('.banner img');
+    document.getElementById('imagenBanner').value = bannerImg.src;
+    document.getElementById('previewBanner').src = bannerImg.src;
+    
+    // Configurar eventos para vista previa
+    document.getElementById('imagenBanner').addEventListener('input', function() {
+      document.getElementById('previewBanner').src = this.value;
+    });
+    
+    document.getElementById('fuenteSitio').addEventListener('change', function() {
+      document.body.style.fontFamily = this.value;
+    });
+    
+    document.getElementById('colorPrimario').addEventListener('input', function() {
+      document.documentElement.style.setProperty('--verde-primario', this.value);
+    });
+    
+    document.getElementById('colorSecundario').addEventListener('input', function() {
+      document.documentElement.style.setProperty('--verde-secundario', this.value);
+    });
+  }
+  
+  // Función para aplicar cambios de diseño
+  function aplicarCambiosDiseno() {
+    // Banner
+    const bannerImg = document.querySelector('.banner img');
+    bannerImg.src = document.getElementById('imagenBanner').value;
+    
+    alert('Cambios de diseño aplicados correctamente');
+  }
+  
+  // Función para restaurar diseño original
+  function restaurarDisenoOriginal() {
+    // Restaurar colores originales
+    document.documentElement.style.setProperty('--verde-primario', '#2e8b57');
+    document.documentElement.style.setProperty('--verde-secundario', '#3cb371');
+    document.getElementById('colorPrimario').value = '#2e8b57';
+    document.getElementById('colorSecundario').value = '#3cb371';
+    
+    // Restaurar fuente original
+    document.body.style.fontFamily = "'Poppins', sans-serif";
+    document.getElementById('fuenteSitio').value = "'Poppins', sans-serif";
+    
+    // Restaurar imagen del banner
+    const bannerImg = document.querySelector('.banner img');
+    bannerImg.src = 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+    document.getElementById('imagenBanner').value = bannerImg.src;
+    document.getElementById('previewBanner').src = bannerImg.src;
+    
+    alert('Diseño original restaurado');
+  }
+  
+  // Función de login
+  function loginAdmin() {
+    const user = document.getElementById("adminUser").value;
+    const pass = document.getElementById("adminPass").value;
+    
+    // Credenciales simples (puedes cambiarlas)
+    if (user === "admin" && pass === "donmario") {
+      document.getElementById("adminPanel").style.display = "block";
+      document.getElementById("adminUser").value = "";
+      document.getElementById("adminPass").value = "";
+      cargarProductosParaEdicion();
+    } else {
+      alert("Credenciales incorrectas. Intenta con usuario: admin y contraseña: donmario");
+    }
+  }
+</script>
+
+<!-- Scripts adicionales para funcionalidades existentes -->
+<script>
+  const precios = {
+    palta: 5500,
+    manzana: 2200,
+    pera: 2000,
+    uva: 2500,
+    kiwi: 3500,
+    piña: 2800,
+    mango: 4500,
+    pepinoDulce: 1800,
+    frutilla: 3000,
+    platano: 800,
+    naranja: 1500,
+    tomate: 1800,
+    lechuga: 1000,
+    papa: 600,
+    cebolla: 500,
+    zanahoria: 1000,
+    pepino: 600,
+    zapallo: 1200,
+    brocoli: 1200,
+    coliflor: 3000,
+    champinones: 2500,
+    repollo: 800
+  };
+
+  function calcularTotal() {
+    let total = 0;
+    
+    // Frutas
+    total += (parseFloat(document.getElementById("cantidadPalta").value) || 0) * precios.palta;
+    total += (parseFloat(document.getElementById("cantidadManzana").value) || 0) * precios.manzana;
+    total += (parseFloat(document.getElementById("cantidadPera").value) || 0) * precios.pera;
+    total += (parseFloat(document.getElementById("cantidadUva").value) || 0) * precios.uva;
+    total += (parseFloat(document.getElementById("cantidadKiwi").value) || 0) * precios.kiwi;
+    total += (parseFloat(document.getElementById("cantidadPiña").value) || 0) * precios.piña;
+    total += (parseFloat(document.getElementById("cantidadMango").value) || 0) * precios.mango;
+    total += (parseFloat(document.getElementById("cantidadPepinoDulce").value) || 0) * precios.pepinoDulce;
+    total += (parseFloat(document.getElementById("cantidadFrutilla").value) || 0) * precios.frutilla;
+    total += (parseFloat(document.getElementById("cantidadPlatano").value) || 0) * precios.platano;
+    total += (parseFloat(document.getElementById("cantidadNaranja").value) || 0) * precios.naranja;
+    
+    // Verduras
+    total += (parseFloat(document.getElementById("cantidadTomate").value) || 0) * precios.tomate;
+    total += (parseFloat(document.getElementById("cantidadLechuga").value) || 0) * precios.lechuga;
+    total += (parseFloat(document.getElementById("cantidadPapa").value) || 0) * precios.papa;
+    total += (parseFloat(document.getElementById("cantidadCebolla").value) || 0) * precios.cebolla;
+    total += (parseFloat(document.getElementById("cantidadZanahoria").value) || 0) * precios.zanahoria;
+    total += (parseFloat(document.getElementById("cantidadPepino").value) || 0) * precios.pepino;
+    total += (parseFloat(document.getElementById("cantidadZapallo").value) || 0) * precios.zapallo;
+    total += (parseFloat(document.getElementById("cantidadBrócoli").value) || 0) * precios.brocoli;
+    total += (parseFloat(document.getElementById("cantidadColiflor").value) || 0) * precios.coliflor;
+    total += (parseFloat(document.getElementById("cantidadChampiñones").value) || 0) * precios.champinones;
+    total += (parseFloat(document.getElementById("cantidadRepollo").value) || 0) * precios.repollo;
+
+    document.getElementById("totalPedido").innerText = "Total: $" + total.toLocaleString('es-CL');
+  }
+
+  function enviarPedido() {
+    let mensaje = "¡Hola! Quiero hacer el siguiente pedido:\n\n";
+    let total = 0;
+    let hayProductos = false;
+    
+    function agregarProducto(nombre, idInput, precio, unidad = "kg") {
+      const cantidad = parseFloat(document.getElementById(idInput).value) || 0;
+      if (cantidad > 0) {
+        const subtotal = cantidad * precio;
+        mensaje += `• ${nombre}: ${cantidad} ${unidad} - $${subtotal.toLocaleString('es-CL')}\n`;
+        total += subtotal;
+        hayProductos = true;
+      }
+    }
+    
+    // Frutas
+    agregarProducto("Palta Hass", "cantidadPalta", precios.palta);
+    agregarProducto("Manzana", "cantidadManzana", precios.manzana);
+    agregarProducto("Pera", "cantidadPera", precios.pera);
+    agregarProducto("Uva", "cantidadUva", precios.uva);
+    agregarProducto("Kiwi", "cantidadKiwi", precios.kiwi);
+    agregarProducto("Piña", "cantidadPiña", precios.piña, "unidad");
+    agregarProducto("Mango", "cantidadMango", precios.mango);
+    agregarProducto("Pepino dulce", "cantidadPepinoDulce", precios.pepinoDulce, "unidad");
+    agregarProducto("Frutilla", "cantidadFrutilla", precios.frutilla);
+    agregarProducto("Plátano", "cantidadPlatano", precios.platano);
+    agregarProducto("Naranja", "cantidadNaranja", precios.naranja);
+    
+    // Verduras
+    agregarProducto("Tomate larga vida", "cantidadTomate", precios.tomate);
+    agregarProducto("Lechuga", "cantidadLechuga", precios.lechuga, "unidad");
+    agregarProducto("Papa", "cantidadPapa", precios.papa);
+    agregarProducto("Cebolla", "cantidadCebolla", precios.cebolla);
+    agregarProducto("Zanahoria", "cantidadZanahoria", precios.zanahoria);
+    agregarProducto("Pepino", "cantidadPepino", precios.pepino, "unidad");
+    agregarProducto("Zapallo", "cantidadZapallo", precios.zapallo);
+    agregarProducto("Brócoli", "cantidadBrócoli", precios.brocoli, "unidad");
+    agregarProducto("Coliflor", "cantidadColiflor", precios.coliflor, "unidad");
+    agregarProducto("Champiñones", "cantidadChampiñones", precios.champinones, "unidad");
+    agregarProducto("Repollo", "cantidadRepollo", precios.repollo, "unidad");
+    
+    if (!hayProductos) {
+      alert("Por favor, selecciona al menos un producto antes de enviar el pedido.");
+      return;
+    }
+    
+    mensaje += `\n*Total del pedido:* $${total.toLocaleString('es-CL')}\n\n`;
+    mensaje += "¡Gracias!";
+    
+    window.location.href = `https://wa.me/56950850927?text=${encodeURIComponent(mensaje)}`;
+  }
+
+  function actualizarResumen() {
+    const lista = document.getElementById("listaResumen");
+    lista.innerHTML = "";
+
+    const productos = [
+      ["Palta Hass", "cantidadPalta"],
+      ["Manzana", "cantidadManzana"],
+      ["Pera", "cantidadPera"],
+      ["Uva", "cantidadUva"],
+      ["Kiwi", "cantidadKiwi"],
+      ["Piña", "cantidadPiña"],
+      ["Mango", "cantidadMango"],
+      ["Pepino dulce", "cantidadPepinoDulce"],
+      ["Frutilla", "cantidadFrutilla"],
+      ["Plátano", "cantidadPlatano"],
+      ["Naranja", "cantidadNaranja"],
+      ["Tomate larga vida", "cantidadTomate"],
+      ["Lechuga", "cantidadLechuga"],
+      ["Papa", "cantidadPapa"],
+      ["Cebolla", "cantidadCebolla"],
+      ["Zanahoria", "cantidadZanahoria"],
+      ["Pepino", "cantidadPepino"],
+      ["Zapallo", "cantidadZapallo"],
+      ["Brócoli", "cantidadBrócoli"],
+      ["Coliflor", "cantidadColiflor"],
+      ["Champiñones", "cantidadChampiñones"],
+      ["Repollo", "cantidadRepollo"]
+    ];
+
+    let hayProductos = false;
+    
+    productos.forEach(([nombre, id]) => {
+      const cantidad = parseFloat(document.getElementById(id).value);
+      if (cantidad > 0) {
+        hayProductos = true;
+        const li = document.createElement("li");
+        let unidad = ["Piña", "Lechuga", "Pepino", "Brócoli", "Coliflor", "Champiñones", "Repollo", "Pepino dulce"].includes(nombre) ? "unidad" : "kg";
+        li.textContent = `• ${nombre}: ${cantidad} ${unidad}`;
+        lista.appendChild(li);
+      }
+    });
+
+    const resumen = document.getElementById("resumenPedido");
+    resumen.style.display = "block";
+  }
+
+  // Configurar event listeners cuando el DOM esté completamente cargado
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.cantidad-input').forEach(input => {
+      input.addEventListener('input', function() {
+        calcularTotal();
+        actualizarResumen();
+      });
+    });
+    
+    // Llamar inicialmente para mostrar el estado actual
+    calcularTotal();
+    actualizarResumen();
+  });
+</script>
+
+<!-- Sección flotante de resumen del pedido -->
+<style>
+  .resumen-pedido {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    background-color: #ffffff;
+    border: 2px solid var(--verde-secundario);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    z-index: 999;
+    max-width: 90%;
+    width: 300px;
+    overflow-y: auto;
+    max-height: 80vh;
+    display: block;
+  }
+
+  .resumen-pedido h4 {
+    margin-bottom: 0.5rem;
+    color: var(--verde-primario);
+    font-size: 1.2rem;
+  }
+
+  .resumen-lista {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+  }
+
+  .resumen-lista li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .resumen-pedido {
+      top: auto;
+      bottom: 80px;
+      left: 5%;
+      right: 5%;
+      width: auto;
+      max-height: 30vh;
+    }
+  }
+</style>
+<div class="resumen-pedido" id="resumenPedido">
+<h4>Resumen del Pedido</h4>
+<ul class="resumen-lista" id="listaResumen"></ul>
+<p id="totalPedido" style="font-size: 1.1rem; font-weight: bold; color: var(--verde-primario); margin-top: 1rem;">Total: $0</p>
+
+
+<h4>Resumen del Pedido</h4>
+
+<ul class="resumen-lista" id="listaResumen"></ul>
+<button class="boton-comprar" onclick="enviarPedido()" style="margin-top: 1rem; width: 100%;">Enviar Pedido</button>
+
+</div>
+
+
+  <script>
+    let contadorCarrito = 0;
+    const carritoContador = document.getElementById("carritoContador");
+    const inputs = document.querySelectorAll(".cantidad-input");
+
+    function contarProductosDistintos() {
+      let distintos = 0;
+      inputs.forEach(input => {
+        if (parseFloat(input.value) > 0) distintos++;
+      });
+      carritoContador.textContent = distintos;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      inputs.forEach(input => {
+        input.addEventListener("input", () => {
+          calcularTotal();
+          actualizarResumen();
+          contarProductosDistintos();
+        });
+      });
+      contarProductosDistintos();
+    });
+  </script>
+
+<script>
+function calcularTotal() {
+  let total = 0;
+  document.querySelectorAll(".producto").forEach(producto => {
+    const input = producto.querySelector(".cantidad-input");
+    if (input) {
+      const precioTexto = producto.querySelector(".producto-precio").textContent;
+      const precio = parseInt(precioTexto.replace(/[^0-9]/g, ""));
+      const cantidad = parseFloat(input.value) || 0;
+      total += cantidad * precio;
+    }
+  });
+  document.getElementById("totalPedido").innerText = "Total: $" + total.toLocaleString('es-CL');
+  document.getElementById("carritoTotal").innerText = "Total: $" + total.toLocaleString('es-CL');
+}
+
+function enviarPedido() {
+  let mensaje = "¡Hola! Quiero hacer el siguiente pedido:\n\n";
+  let total = 0;
+  let hayProductos = false;
+
+  document.querySelectorAll(".producto").forEach(producto => {
+    const input = producto.querySelector(".cantidad-input");
+    if (input) {
+      const cantidad = parseFloat(input.value) || 0;
+      if (cantidad > 0) {
+        const nombre = producto.querySelector("h3").textContent;
+        const precioTexto = producto.querySelector(".producto-precio").textContent;
+        const precio = parseInt(precioTexto.replace(/[^0-9]/g, ""));
+        const unidad = precioTexto.includes("/ unidad") ? "unidad" : "kg";
+        const subtotal = cantidad * precio;
+        mensaje += `• ${nombre}: ${cantidad} ${unidad} - $${subtotal.toLocaleString('es-CL')}\n`;
+        total += subtotal;
+        hayProductos = true;
+      }
+    }
+  });
+
+  if (!hayProductos) {
+    alert("Por favor, selecciona al menos un producto antes de enviar el pedido.");
+    return;
+  }
+
+  mensaje += `\n*Total del pedido:* $${total.toLocaleString('es-CL')}\n\n¡Gracias!`;
+  window.location.href = `https://wa.me/56950850927?text=${encodeURIComponent(mensaje)}`;
+}
+
+function actualizarResumen() {
+  const lista = document.getElementById("listaResumen");
+  lista.innerHTML = "";
+  let hayProductos = false;
+
+  document.querySelectorAll(".producto").forEach(producto => {
+    const input = producto.querySelector(".cantidad-input");
+    if (input) {
+      const cantidad = parseFloat(input.value) || 0;
+      if (cantidad > 0) {
+        hayProductos = true;
+        const nombre = producto.querySelector("h3").textContent;
+        const precioTexto = producto.querySelector(".producto-precio").textContent;
+        const unidad = precioTexto.includes("/ unidad") ? "unidad" : "kg";
+        const li = document.createElement("li");
+        li.textContent = `• ${nombre}: ${cantidad} ${unidad}`;
+        lista.appendChild(li);
+      }
+    }
+  });
+
+  const resumen = document.getElementById("resumenPedido");
+  resumen.style.display = "block";
+}
+
+function contarProductosDistintos() {
+  let distintos = 0;
+  document.querySelectorAll(".cantidad-input").forEach(input => {
+    if (parseFloat(input.value) > 0) distintos++;
+  });
+  document.getElementById("carritoContador").textContent = distintos;
+}
+
+// Escuchar cambios en inputs dinámicos también
+function conectarEventosDinamicos() {
+  document.querySelectorAll(".cantidad-input").forEach(input => {
+    if (!input.dataset.listener) {
+      input.addEventListener("input", () => {
+        calcularTotal();
+        actualizarResumen();
+        contarProductosDistintos();
+      });
+      input.dataset.listener = "true";
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  conectarEventosDinamicos();
+  calcularTotal();
+  actualizarResumen();
+  contarProductosDistintos();
+});
+
+// También conectar después de agregar productos desde el panel admin
+const originalAgregarProducto = agregarProducto;
+agregarProducto = function() {
+  originalAgregarProducto();
+  setTimeout(() => {
+    conectarEventosDinamicos();
+    calcularTotal();
+    actualizarResumen();
+    contarProductosDistintos();
+  }, 100);
+};
+
+function filtrarProductos() {
+  const input = document.getElementById('buscadorInput');
+  const filtro = input.value.toLowerCase();
+  const productos = document.querySelectorAll('.producto');
+
+  productos.forEach(producto => {
+    const nombre = producto.querySelector('h3').textContent.toLowerCase();
+    if (nombre.includes(filtro)) {
+      producto.style.display = '';
+    } else {
+      producto.style.display = 'none';
+    }
+  });
+}
+
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carrusel-slide");
+const indicadores = document.querySelectorAll(".carrusel-indicador");
+
+function mostrarSlide(index) {
+  const contenedor = document.getElementById("carrusel");
+  contenedor.style.transform = `translateX(-${index * 100}%)`;
+
+  indicadores.forEach((indicador, i) => {
+    indicador.classList.toggle("activo", i === index);
+  });
+
+  slideIndex = index;
+}
+
+function moverCarrusel(direccion) {
+  const totalSlides = slides.length;
+  slideIndex = (slideIndex + direccion + totalSlides) % totalSlides;
+  mostrarSlide(slideIndex);
+}
+
+function irASlide(index) {
+  mostrarSlide(index);
+}
+
+let autoSlide = setInterval(() => moverCarrusel(1), 5000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarSlide(0);
+});
+</script>
+
+</body>
+</html>
